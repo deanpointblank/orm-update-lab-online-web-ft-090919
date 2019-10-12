@@ -6,6 +6,7 @@ class Student
   attr_reader :id
   # Remember, you can access your database connection anywhere in this class
   #  with DB[:conn]
+  
   def initialize(id=nil, name, grade)
     @name = name
     @grade = grade
@@ -51,7 +52,7 @@ class Student
   end
   
   def self.new_from_db(row)
-    new_student = new_student.new
+    new_student = self.new
     new_student.id = row[0]
     new_student.name = row[1]
     new_student.grade = row[2]
