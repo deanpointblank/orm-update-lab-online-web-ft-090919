@@ -2,14 +2,15 @@ require_relative "../config/environment.rb"
 require "pry"
 class Student
 
-  attr_accessor :name, :grade, :id
-  attr_reader 
+  attr_accessor :name, :grade
+  attr_reader :id
   # Remember, you can access your database connection anywhere in this class
   #  with DB[:conn]
   
   def initialize(id=nil, name, grade)
     @name = name
     @grade = grade
+    @id = id
   end
   
   def self.create_table
@@ -52,7 +53,6 @@ class Student
   end
   
   def self.new_from_db(row)
-    binding.pry
     new_student = self.new(row[0], row[1], row[2])
     new_student
   end
