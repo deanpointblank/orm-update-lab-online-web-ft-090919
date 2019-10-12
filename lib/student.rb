@@ -48,13 +48,13 @@ class Student
   
   def self.create(name, grade)
     new_student = self.new(nil, name, grade)
-    new_student
+    new_student.save
   end
   
   def self.new_from_db(row)
     binding.pry
     new_student = self.new(row[0], row[1], row[2])
-    new_student.save
+    new_studen
   end
   
   def self.find_by_name(name)
