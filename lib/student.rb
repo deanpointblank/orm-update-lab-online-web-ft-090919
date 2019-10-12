@@ -46,7 +46,7 @@ class Student
   end
   
   def self.create
-    
+    new_student = 
   end
   
   def update
